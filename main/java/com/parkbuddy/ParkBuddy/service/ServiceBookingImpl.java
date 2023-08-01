@@ -1,7 +1,7 @@
-package com.parkbuddy.service;
+package com.parkbuddy.ParkBuddy.service;
 
-import com.parkbuddy.model.BookingVO;
-import com.parkbuddy.repositories.BookingRepository;
+import com.parkbuddy.ParkBuddy.model.BookingVO;
+import com.parkbuddy.ParkBuddy.repositories.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

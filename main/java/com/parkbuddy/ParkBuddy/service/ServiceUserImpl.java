@@ -1,7 +1,7 @@
-package com.parkbuddy.service;
+package com.parkbuddy.ParkBuddy.service;
 
-import com.parkbuddy.model.UserVO;
-import com.parkbuddy.repositories.UserRepository;
+import com.parkbuddy.ParkBuddy.model.UserVO;
+import com.parkbuddy.ParkBuddy.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

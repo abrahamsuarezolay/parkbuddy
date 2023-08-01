@@ -1,7 +1,8 @@
-package com.parkbuddy.service;
+package com.parkbuddy.ParkBuddy.service;
 
-import com.parkbuddy.model.ParkingSpaceVO;
+import com.parkbuddy.ParkBuddy.model.ParkingSpaceVO;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ServiceParkingSpace {
@@ -28,4 +29,6 @@ public interface ServiceParkingSpace {
     void deleteAll(Iterable<? extends ParkingSpaceVO> entities);
 
     void deleteAll();
+
+    Optional<List<ParkingSpaceVO>> findByLocation(String location);
 }

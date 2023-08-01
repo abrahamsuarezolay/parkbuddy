@@ -1,6 +1,6 @@
-package com.parkbuddy.repositories;
+package com.parkbuddy.ParkBuddy.repositories;
 
-import com.parkbuddy.model.BookingVO;
+import com.parkbuddy.ParkBuddy.model.BookingVO;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

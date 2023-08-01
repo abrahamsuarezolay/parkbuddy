@@ -1,4 +1,4 @@
-package com.parkbuddy.model;
+package com.parkbuddy.ParkBuddy.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

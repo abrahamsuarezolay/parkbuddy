@@ -1,6 +1,6 @@
-package com.parkbuddy.service;
+package com.parkbuddy.ParkBuddy.service;
 
-import com.parkbuddy.model.BookingVO;
+import com.parkbuddy.ParkBuddy.model.BookingVO;
 
 import java.util.Optional;
 

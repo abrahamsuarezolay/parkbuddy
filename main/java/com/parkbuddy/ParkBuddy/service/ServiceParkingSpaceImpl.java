@@ -1,10 +1,11 @@
-package com.parkbuddy.service;
+package com.parkbuddy.ParkBuddy.service;
 
-import com.parkbuddy.model.ParkingSpaceVO;
-import com.parkbuddy.repositories.ParkingSpaceRepository;
+import com.parkbuddy.ParkBuddy.model.ParkingSpaceVO;
+import com.parkbuddy.ParkBuddy.repositories.ParkingSpaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -71,5 +72,9 @@ public class ServiceParkingSpaceImpl implements ServiceParkingSpace {
     @Override
     public void deleteAll() {
         parkingSpaceRepository.deleteAll();
+    }
+
+    public Optional<List<ParkingSpaceVO>> findByLocation(String location) {
+        return parkingSpaceRepository.findByLocation(location);
     }
 }
