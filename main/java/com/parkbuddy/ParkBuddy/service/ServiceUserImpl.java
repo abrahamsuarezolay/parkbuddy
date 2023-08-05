@@ -3,6 +3,7 @@ package com.parkbuddy.ParkBuddy.service;
 import com.parkbuddy.ParkBuddy.model.UserVO;
 import com.parkbuddy.ParkBuddy.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -15,7 +16,11 @@ public class ServiceUserImpl implements ServiceUser {
 
     @Override
     public <S extends UserVO> S save(S entity) {
-        return userRepository.save(entity);
+        try {
+            return userRepository.save(entity);
+        }catch(DataIntegrityViolationException e){
+            return entity;
+        }
     }
 
     @Override
@@ -72,6 +77,5 @@ public class ServiceUserImpl implements ServiceUser {
     public void deleteAll() {
         userRepository.deleteAll();
     }
-
 
 }

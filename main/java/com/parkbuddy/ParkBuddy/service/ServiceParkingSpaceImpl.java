@@ -75,6 +75,7 @@ public class ServiceParkingSpaceImpl implements ServiceParkingSpace {
     }
 
     public Optional<List<ParkingSpaceVO>> findByLocation(String location) {
-        return parkingSpaceRepository.findByLocation(location);
+
+            return parkingSpaceRepository.findByLocation(location);
     }
 }

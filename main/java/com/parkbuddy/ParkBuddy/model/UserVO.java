@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }) })
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,6 +26,9 @@ public class UserVO {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<BookingVO> bookings;
 
-
-
+    public UserVO(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
 }
