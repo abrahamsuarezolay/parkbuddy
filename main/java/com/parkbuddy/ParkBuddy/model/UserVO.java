@@ -46,7 +46,6 @@ public class UserVO implements UserDetails {
         for(UserRolVO r:roles){
             authorities.add(new SimpleGrantedAuthority(r.getRole().getName()));
         }
-
         return authorities;
     }
 
