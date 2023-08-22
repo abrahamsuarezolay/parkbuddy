@@ -31,6 +31,4 @@ public interface ServiceUser {
     void deleteAll();
 
     UserDetails findByUsername(String username);
-
-
 }
