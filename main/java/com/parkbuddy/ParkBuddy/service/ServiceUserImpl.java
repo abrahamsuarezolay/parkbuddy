@@ -4,6 +4,7 @@ import com.parkbuddy.ParkBuddy.model.UserVO;
 import com.parkbuddy.ParkBuddy.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -78,4 +79,7 @@ public class ServiceUserImpl implements ServiceUser {
         userRepository.deleteAll();
     }
 
+    public UserDetails findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }
