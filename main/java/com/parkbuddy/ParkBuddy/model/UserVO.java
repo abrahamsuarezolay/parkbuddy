@@ -26,6 +26,9 @@ public class UserVO {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<BookingVO> bookings;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<UserRolVO> roles;
+
     public UserVO(int id, String username, String password) {
         this.id = id;
         this.username = username;

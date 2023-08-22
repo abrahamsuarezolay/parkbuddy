@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "roles")
 @Data
@@ -16,4 +18,7 @@ public class RolVO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    @OneToMany(mappedBy = "roles", cascade = CascadeType.REMOVE)
+    private List<UserRolVO> users;
 }
