@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -29,44 +30,23 @@ public class SecurityConfig {
         http.getSharedObject(AuthenticationManagerBuilder.class).userDetailsService(serviceUser)
                 .passwordEncoder(encrypt());
 
-        //Admin filter
+        //Basic filter
         http
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-                );
-
-        //User filter
-        http
-                .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/user/**").hasAnyRole("ADMIN", "USER")
                         .anyRequest().authenticated()
-                );
-
-        //Anonym User filter
-        http
-                .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers(
-                                "/index"
-                        ).permitAll().anyRequest().authenticated()
                 );
 
         //Custom login
         http
                 .formLogin(form -> form
-                        .loginPage("/login")
-                        .permitAll()
-                );
-
+                                .loginPage("/login")
+                                .permitAll());
 
         //Custom logout
         http
-                .authorizeHttpRequests((authorize) -> authorize
-                                .requestMatchers("/my/success/endpoint").permitAll()
-                        // ...
-                )
                 .logout((logout) -> logout.logoutSuccessUrl("/my/success/endpoint"));
-
 
         //Configured filter returned
         return http.build();

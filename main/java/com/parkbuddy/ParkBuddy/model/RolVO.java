@@ -19,6 +19,6 @@ public class RolVO {
     private int id;
     private String name;
 
-    @OneToMany(mappedBy = "roles", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.REMOVE)
     private List<UserRolVO> users;
 }
