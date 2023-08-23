@@ -47,7 +47,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers(
-                                ""
+                                "/index"
                         ).permitAll().anyRequest().authenticated()
                 );
 
