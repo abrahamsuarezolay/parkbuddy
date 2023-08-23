@@ -1,6 +1,7 @@
 package com.parkbuddy.ParkBuddy.service;
 
 import com.parkbuddy.ParkBuddy.model.UserVO;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Optional;
 
@@ -28,4 +29,6 @@ public interface ServiceUser {
     void deleteAll(Iterable<? extends UserVO> entities);
 
     void deleteAll();
+
+    UserDetails findByUsername(String username);
 }
