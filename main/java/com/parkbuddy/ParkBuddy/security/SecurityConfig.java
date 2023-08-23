@@ -44,6 +44,12 @@ public class SecurityConfig {
                 );
 
         //Anonym User filter
+        http
+                .authorizeHttpRequests((authz) -> authz
+                        .requestMatchers(
+                                ""
+                        ).permitAll().anyRequest().authenticated()
+                );
 
         //Custom login
         http
